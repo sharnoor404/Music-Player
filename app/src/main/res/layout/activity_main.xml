@@ -42,5 +42,32 @@
         android:background="@drawable/pause"
         />
 
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/btn_play"
+        android:layout_alignEnd="@id/circularImageView"
+        android:layout_alignRight="@+id/circularImageView"
+        android:background="@drawable/stop"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/btn_play"
+        android:layout_alignEnd="@id/circularImageView"
+        android:layout_alignRight="@+id/circularImageView"
+        android:background="@drawable/stop"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+
 
 </RelativeLayout>
