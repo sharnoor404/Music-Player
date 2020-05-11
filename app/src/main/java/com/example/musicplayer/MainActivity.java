@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_pause:
                 if(mediaPlayer!=null){//i.e if music is playing
+                    mediaPlayer.pause();
                     pauseCurrentPosition=mediaPlayer.getCurrentPosition();//it retrieves the position at which pause was pressed for the music
 
                 }
@@ -60,9 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(mediaPlayer!=null)
                 {//without this condition, the media player may crash if we click on the pause button after the music is already paused
                     mediaPlayer.stop();
-                    break;
+                    mediaPlayer=null;
                 }
-
+                break;
 
         }
     }
