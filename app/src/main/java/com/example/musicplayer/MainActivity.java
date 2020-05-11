@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_play:
+                mediaPlayer=MediaPlayer.create(getApplicationContext(),R.raw.music);
+                mediaPlayer.start();
+
                 break;
             case R.id.btn_pause:
                 break;
