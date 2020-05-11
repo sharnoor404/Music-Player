@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        //step 1:change action bar color by changin the primary colors in color.xml
+        //step 2:to add circular image add dependencies in app gradle
+        //step 3: Add layout
         switch(v.getId()){
             case R.id.btn_play:
                 if(mediaPlayer==null){//i.e if no music is playing
@@ -63,9 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
-    //step 1:change action bar color by changin the primary colors in color.xml
-    //step 2:to add circular image add dependencies in app gradle
-    //step 3: Add layout
+
 
 
 
