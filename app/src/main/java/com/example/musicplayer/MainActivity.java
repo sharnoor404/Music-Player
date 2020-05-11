@@ -34,14 +34,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_play:
-                mediaPlayer=MediaPlayer.create(getApplicationContext(),R.raw.music);
-                mediaPlayer.start();
+                if(mediaPlayer==null){
+                    mediaPlayer=MediaPlayer.create(getApplicationContext(),R.raw.music);
+                    mediaPlayer.start();
+                }
+
 
                 break;
             case R.id.btn_pause:
                 break;
             case R.id.btn_stop:
-                break;
+                if(mediaPlayer!=null)
+                {//without this condition, the media player may crash if we click on the pause button after the music is already paused
+                    mediaPlayer.stop();
+                    break;
+                }
+
 
         }
     }
