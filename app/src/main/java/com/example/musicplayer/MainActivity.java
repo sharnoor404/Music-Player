@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button play,pause,stop;
     MediaPlayer mediaPlayer;
     //to operate the media(music) here.
+    int pauseCurrentPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +35,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_play:
-                if(mediaPlayer==null){
+                if(mediaPlayer==null){//i.e if no music is playing
                     mediaPlayer=MediaPlayer.create(getApplicationContext(),R.raw.music);
+                    mediaPlayer.start();
+                }
+                else if(!mediaPlayer.isPlaying()){//to be implemented when paused
+                    mediaPlayer.seekTo(pauseCurrentPosition);
+                    //continues music from the paused position
                     mediaPlayer.start();
                 }
 
 
                 break;
             case R.id.btn_pause:
+                if(mediaPlayer!=null){//i.e if music is playing
+                    pauseCurrentPosition=mediaPlayer.getCurrentPosition();//it retrieves the position at which pause was pressed for the music
+
+                }
                 break;
             case R.id.btn_stop:
                 if(mediaPlayer!=null)
